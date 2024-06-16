@@ -1,8 +1,6 @@
 using UnityEngine;
 
-
-
-namespace StateMachine.Base
+namespace FiniteStateMachine.Base
 {
     public abstract class BaseState
     {

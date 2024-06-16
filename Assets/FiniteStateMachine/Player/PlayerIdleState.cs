@@ -1,9 +1,9 @@
-using StateMachine.Base;
+using FiniteStateMachine.Base;
 using UnityEngine;
 
 
 
-namespace StateMachine.Player
+namespace FiniteStateMachine.Player
 {
     public class PlayerIdleState : BaseState
     {

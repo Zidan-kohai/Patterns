@@ -1,5 +1,5 @@
-using StateMachine.Base;
-using StateMachine.Player;
+using FiniteStateMachine.Base;
+using FiniteStateMachine.Player;
 
 public class PlayerStateController : StateController
 {

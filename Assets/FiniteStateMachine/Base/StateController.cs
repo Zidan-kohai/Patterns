@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace StateMachine.Base
+namespace FiniteStateMachine.Base
 {
     public class StateController : MonoBehaviour
     {
