@@ -1,9 +1,11 @@
-﻿using FiniteStateMachine.Base;
+using FiniteStateMachine.Base;
 using UnityEngine;
 
-namespace FiniteStateMachine.Player
+
+
+namespace FiniteStateMachine.Template
 {
-    public class PlayerWalkState : BaseState
+    public class PlayerIdleState : BaseState
     {
         public override void Enter(StateController stateController)
         {
@@ -59,5 +61,6 @@ namespace FiniteStateMachine.Player
         {
             Debug.Log("Idle Exit");
         }
+
     }
 }
