@@ -9,7 +9,7 @@ namespace FactoryMethod.Template.SwordMan
         {
             SwordMan swordManPrefab = Resources.Load<SwordMan>("SwordManPrefab");
 
-            return Instantiate(swordManPrefab);
+            return Object.Instantiate(swordManPrefab);
         }
     }
 }

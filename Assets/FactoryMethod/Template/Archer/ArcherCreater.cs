@@ -9,7 +9,7 @@ namespace FactoryMethod.Template.Archer
         {
             Archer archerPrefab = Resources.Load<Archer>("ArcherPrefab");
 
-            return Instantiate(archerPrefab);
+            return Object.Instantiate(archerPrefab);
         }
     }
 }
