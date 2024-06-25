@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AbstractFactory.Template.Red
 {
-    public class RedUnitCreater : Creater
+    public class RedUnitFactory : Factory
     {
         public override Archer CreateArcher()
         {

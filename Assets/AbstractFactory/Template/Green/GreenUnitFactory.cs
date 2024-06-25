@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AbstractFactory.Template.Green
 {
-    public class GreenUnitCreater : Creater
+    public class GreenUnitFactory : Factory
     {
         public override Archer CreateArcher()
         {
