@@ -2,30 +2,29 @@ using AbstractFactory.Base;
 using AbstractFactory.Template.Green;
 using AbstractFactory.Template.Red;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+
 
 namespace AbstractFactory.Template
 {
     public class AbstractUnitFactory : AbstractCreater
     {
-        public const string GreenUnitsFactoryPath = "";
-        public const string RedUnitsFactoryPath = "";
-
+        private Dictionary<Type, string> prefabPathf = new Dictionary<Type, string>()
+        {
+            {typeof(GreenUnitFactory), "GreenUnitFactory"},
+            {typeof(RedUnitFactory), "RedUnitFactory"},
+        };
 
         public override TFactory CreateFactory<TFactory>()
         {
-            if(typeof(TFactory) == typeof(GreenUnitFactory))
+
+            if(prefabPathf.TryGetValue(typeof(TFactory), out string pathf))
             {
-                GreenUnitFactory greenUnitCreaterPrefab = Resources.Load<GreenUnitFactory>(GreenUnitsFactoryPath);
-                return UnityEngine.Object.Instantiate(greenUnitCreaterPrefab) as TFactory;
-            }
-            else if(typeof(TFactory) == typeof(RedUnitFactory))
-            {
-                RedUnitFactory redUnitCreaterPrefab = Resources.Load<RedUnitFactory>(GreenUnitsFactoryPath);
-                return UnityEngine.Object.Instantiate(redUnitCreaterPrefab) as TFactory;
+                return Resources.Load<TFactory>(pathf);
             }
 
-            throw new ArgumentException($"AbstractUnitFactory don`t {typeof(TFactory)}");
+            throw new ArgumentException($"AbstractFactory don`t have {typeof(TFactory)}");
         }
     }
 }
