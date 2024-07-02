@@ -80,7 +80,7 @@ namespace ObjectPool.Base
         {
             for (int i = 0; i < pool.Count; i++)
             {
-                if (!pool[i].gameObject.activeInHierarchy && pool is V)
+                if (!pool[i].gameObject.activeInHierarchy && pool[i] is V)
                 {
                     element = pool[i] as V;
                     return true;
