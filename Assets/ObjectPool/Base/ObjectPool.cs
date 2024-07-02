@@ -121,14 +121,9 @@ namespace ObjectPool.Base
 
             if (autoExpand)
             {
-                T prefab = null;
+                T prefab = prefabs.Find(prefab => prefab.GetType() == typeof(V));
 
-                do
-                {
-                    prefab = prefabs[UnityEngine.Random.Range(0, prefabs.Count)];
-                    if (prefab.GetType() == typeof(V)) break;
-                }
-                while (true);
+                if (prefab != null) return CreateNewObject(prefab, true);
 
                 return CreateNewObject(prefab, true);
             }
@@ -146,14 +141,9 @@ namespace ObjectPool.Base
 
             if (autoExpand)
             {
-                T prefab = null;
+                T prefab = prefabs.Find(prefab => prefab.GetType() != typeof(V));
 
-                do
-                {
-                    prefab = prefabs[UnityEngine.Random.Range(0, prefabs.Count)];
-                    if (prefab.GetType() != typeof(V)) break;
-                }
-                while (true);
+                if (prefab != null) return CreateNewObject(prefab, true);
 
                 return CreateNewObject(prefab, true);
             }
